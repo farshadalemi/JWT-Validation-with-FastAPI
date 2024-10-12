@@ -1,6 +1,7 @@
 import uvicorn
 from fastapi import FastAPI
-from app.model import ContactSchema
+from app.model import ContactSchema, UserSchema, UserLoginSchema
+from app.auth.jwt_handler import signJWT
 
 
 # Test Data
@@ -60,3 +61,6 @@ def addContact(contact: ContactSchema):
     return {
         "info":"Contact Added!"
     }
+
+
+# User Signup method
