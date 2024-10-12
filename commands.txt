@@ -1,0 +1,50 @@
+# To activate Virtual Environment:
+$ pipenv shell
+
+
+# Deactivate the Virtual Environment:
+$ deactivate
+
+
+# Install FastAPI:
+$ pip install fastapi
+
+
+# ASGI server:
+$ pip install fastapi uvicorn
+
+
+# Run Uvicorn from the Correct Directory:
+$ uvicorn main:app --reload
+
+
+
+# to set .env file for JWT
+$ python
+$ import secrets
+$ secrets.token_hex(16)
+
+
+#
+$
+
+
+#
+$
+
+
+
+#
+$
+
+
+#
+$
+
+
+#
+$
+
+
+#
+$
