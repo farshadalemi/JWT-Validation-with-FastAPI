@@ -1,5 +1,5 @@
 import uvicorn
-from fastapi import FastAPI
+from fastapi import FastAPI, Body
 from app.model import ContactSchema, UserSchema, UserLoginSchema
 from app.auth.jwt_handler import signJWT
 
@@ -29,7 +29,7 @@ MyContacts = [
 ]
 
 
-users = []
+UsersList = []
 
 
 app = FastAPI()
@@ -64,3 +64,7 @@ def addContact(contact: ContactSchema):
 
 
 # User Signup method
+@app.post("/users/signup", tags=["users"])
+def user_signup(user : UserSchema = Body(default = None)):
+    UsersList.append(user)
+    
