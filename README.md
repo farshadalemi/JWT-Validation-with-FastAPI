@@ -3,8 +3,8 @@
 
 
 ![My Image](img/Swager.png)
----------------------------------------
 
+---------------------------------
 SignUp:
 
 ![Demo](img/Signup.gif?raw=true)
