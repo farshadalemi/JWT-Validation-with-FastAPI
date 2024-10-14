@@ -1,8 +1,8 @@
 # JWT-Validation-with-FastAPI
 
 
----------------------------------------
-![My Image](img/Screenshot%20from%202024-10-13%2000-41-56.png)
+
+![My Image](img/Swager.png)
 ---------------------------------------
 
 SignUp:
@@ -12,4 +12,5 @@ SignUp:
 ---------------------------------
 
 Login:
+
 ![Demo](img/Login.gif?raw=true)
