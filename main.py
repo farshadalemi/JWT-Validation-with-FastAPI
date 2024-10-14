@@ -1,7 +1,8 @@
 import uvicorn
-from fastapi import FastAPI, Body
+from fastapi import FastAPI, Body, Depends
 from app.model import ContactSchema, UserSchema, UserLoginSchema
 from app.auth.jwt_handler import signJWT
+from app.auth.jwt_bearer import jwtBearer
 
 
 # Test Data
@@ -54,7 +55,7 @@ def get_contacts_by_id(id : int):
         
 
 # Post method | Add Contact
-@app.post("/contacts", tags=["contacts"])
+@app.post("/contacts", dependencies=[Depends(jwtBearer())],tags=["contacts"])
 def addContact(contact: ContactSchema):
     contact.id = len(MyContacts) + 1
     MyContacts.append(contact.dict())
