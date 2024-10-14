@@ -67,4 +67,20 @@ def addContact(contact: ContactSchema):
 @app.post("/users/signup", tags=["users"])
 def user_signup(user : UserSchema = Body(default = None)):
     UsersList.append(user)
+    return signJWT(user.email)
+
+def check_user(data: UserLoginSchema):
+    for user in UsersList:
+        if user.email == data.email and user.password == data.password:
+            return True
+        return False
     
+
+@app.post("/user/login", tags=["users"])
+def user_login(user : UserLoginSchema = Body(default = None)):
+    if check_user(user):
+        return signJWT(user.email)
+    else:
+        return {
+            "error" : "Invalid Login Details!"
+            }
